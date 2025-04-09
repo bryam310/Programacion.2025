@@ -18,9 +18,11 @@ int main(void) {
 
 if (guessed_number == NUM) {
     std::cout << "GANASTE!!!!\n";
-}else {
-    std::cout << "no ganastes, sigue intentando\n";
+}else if (guessed_number > NUM){
+    std::cout << "te pasaste.\n";
+} else { // menor
+    std::cout << "te falta.\n";
 }
 
-    return 0;
+ return 0;
 }
