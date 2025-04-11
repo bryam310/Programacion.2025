@@ -17,6 +17,13 @@ int main(void) {
    while (guessed_number != NUM) {        
         std::cout << "adivina un numero entre 1 y 100:\n";
         std::cin >> guessed_number;
+        std:: cout << "Escribiste:" << guessed_number << "\n";
+
+        // validacion rango 
+        if (guessed_number <0 or 100< guessed_number) {
+            std::cout << " Solo se admite numeros entre 1 y 100 \n";
+            continue;;
+        }
 
         if (guessed_number == NUM) {
             std::cout << "GANASTE!!!!\n";
