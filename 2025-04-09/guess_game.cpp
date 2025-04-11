@@ -11,31 +11,33 @@ Informae si lo adivino
 #include <iostream>
 
 //declaracion
-void play(void);
+void play(int success, int min_val, int max_val);
 
 int main(void){
-    play();
-
+    play(10, 1, 100);
+    play(20, 2, 22);
     return 0;
 }
 
 //implementacion
-void play(void) 
+void play(int success, int min_val, int max_val) 
 {
-    const int NUM = 10;
+    const int NUM = success;
     int guessed_number = NUM/2;
 
-    const int MIN=1;
-    const int MAX=100; 
+    const int MIN=min_val;
+    const int MAX=max_val; 
+
+    std::cout << "\nINICIA EL JUEGO\n";
 
    while (guessed_number != NUM) {        
-        std::cout << "adivina un numero entre 1 y 100:\n";
+        std::cout << "adivina un numero entre " <<MIN<< " y " <<MAX<< "\n";
         std::cin >> guessed_number;
         std:: cout << "Escribiste:" << guessed_number << "\n";
 
         // validacion rango 
         if (guessed_number <MIN or MAX< guessed_number) {
-            std::cout << " Solo se admite numeros entre 1 y 100 \n";
+            std::cout << " Solo se admite numeros entre " <<MIN<< " y " <<MAX<< "\n";
             continue;;
         }
 
