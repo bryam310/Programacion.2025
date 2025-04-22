@@ -9,20 +9,29 @@ Informae si lo adivino
 
 
 #include <iostream>
+#include <random>
 
 //declaracion
-void play(int success, int min_val, int max_val);
+void play( int min_val, int max_val);
 
 int main(void){
-    play(10, 1, 100);
-    play(20, 2, 22);
+    play(1, 100);
+    play(2, 22);
+    
     return 0;
 }
 
 //implementacion
-void play(int success, int min_val, int max_val) 
+void play( int min_val, int max_val) 
 {
-    const int NUM = success;
+
+    //reto: el numero sea aleatorio 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int>distro(min_val, max_val);
+
+    const int NUM = distro(gen);
+
     int guessed_number = NUM/2;
 
     const int MIN=min_val;
