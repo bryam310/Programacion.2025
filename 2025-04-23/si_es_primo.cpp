@@ -6,13 +6,13 @@ bool isprime(long n);
 void test(void);
 
 int main(void){
-
-    for(int ii = 2; ii <= 150; ++ii) {
+    long suma = 0;
+    for(int ii = 500; ii <= 1234; ++ii) {
         if (isprime(ii) == true) {
-            std::cout << ii << "\n";    
+            suma += ii;
         }
     }
-
+     std::cout << suma << "\n";
     return 0;
 }
 
@@ -28,7 +28,7 @@ bool isprime(long n) {
     // suppose it is prime
     bool flag = true; 
 
-    if (n == 2) {
+    if (n == 1) {
         return true;
     }
 
